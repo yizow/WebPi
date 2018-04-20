@@ -185,6 +185,18 @@ Don't forget to `chmod +x` the script to make it executable.
 4. From now on, your ssh connection command will look like `ssh -p port_you_chose user@ip_address`
 
 
+## Port Forwarding
+
+If your Rasbperry Pi is sitting behind a router like mine is, you'll need to setup port forwarding. The exact procedures vary depending on the router, but you want to accomplish the following tasks:
+
+1. Depending on how smart your router is, it _may_ be able to identify the Rasbperry Pi based on it's MAC address, and consistently assign it the same IP address and/or automatically update it's port forwarding rules. I prefer to avoid the hassle and just assign it a static IP, such as `10.0.0.201` or `192.168.0.201`. (Unfortunately, `314` is outside the allowed range of IP addresses so we can't use that)  
+An interesting side note is that most ISP routers will refuse to follow a DNS response if the resulting IP is it's own public address. This means that anywhere _except_ in your home, you'll be able to access your Raspberry Pi website by going to `your_url.com`. However, this won't work on your home network! You'll have to navigate directly to the IP address assigned to the Raspberry Pi. Having a static IP here makes things much easier.
+
+2. Forward the SSH port you chose above.
+
+3. Forward port `80`. This is for http.
+
+
 ## Initializing a git repo
 
 1. Change directory into the root of your project and execute `git init`
