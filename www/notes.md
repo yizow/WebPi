@@ -147,6 +147,7 @@ Next we're going to setup nginx to load a specific configuration file from user 
     * restart nginx server
     * restart node server  
 Don't forget to `chmod +x` the script to make it executable.
+
 2. Modify sudoers file using `visudo` to allow our script to be run by the current user as sudo without requiring a password input. This will allow us to automatically run this script when we get a specific request (such as, for example, a github pull request webhook).
     1. Replace `$USER` with your username
     2. Add the following line to the end of the file after executing `visudo`
@@ -208,10 +209,132 @@ git push -u origin master`
 
 
 ## *Github Webhooks*
-1. Setup webhook for new github repo.
-2. Configure nginx to forward those webhooks to a particular port
-3. Setup node.js using githubhook to listen for those requests
-4. Spawn child process to execute `update.sh`
+
+1. Setup webhook for new github repo from [this guide](https://developer.github.com/webhooks/). We'll only be listening for push events.
+
+2. Set the secret token on the Raspberry Pi by adding `export SECRET_TOKEN=your_token` to the end of your `~/.bashrc` file. You can have the changes take effect immediately by running `source ~/.bashrc`.
+
+3. Configure nginx to forward those webhooks to a particular port.
+
+4. In node.js, create another http server listening on that port to process the request. For now, we can just have it print a message using `console.log()`. We're going to want to do the following operations:
+
+    * Check that request is POST
+    * Check X-GitHub-Event is push
+    * Check user-agent prefixed with GitHub-Hookshot/
+    * Check github signature matches
+    * Respond with 200 if successful, 403 otherwise
+    * Spawn a child process to execute a script
+
+
+5. First add these lines at the top of the file:
+
+        var crypto = require('crypto');
+
+        var textBody = require('body');
+
+        var child_process = require ('child_process');
+
+    Then, add this at the end of the file.
+
+        // Github webhooks
+        http.createServer(function (request, response) {
+          request.on('error', (err) => {
+            console.error(err);
+            response.statusCode = 400;
+            response.end();
+            return;
+          });
+
+          response.on('error', (err) => {
+            console.error(err);
+          });
+
+
+          const { headers } = request;
+          if (
+            request.method === 'POST'
+            && headers['x-github-event'] === 'push'
+            && headers['user-agent'].startsWith('GitHub-Hookshot/')
+          ) {
+            textBody(request, response, function(err, payload_body) {
+              var signature = Buffer.from(headers['x-hub-signature'], 'utf8');
+
+              if (validate_github_webhook(signature, payload_body)) {
+                console.log('Success');
+                response.statusCode = 200;
+                updateCounter++;
+                updateCounter %= 1000;
+
+                auto_update();
+              } else {
+                console.log('Failure');
+                response.statusCode = 403;
+              }
+
+              response.setHeader('Content-Type', 'application/json');
+              response.end();
+            })
+          } else {
+            console.log('github_deploy not from github');
+            response.statusCode = 403;
+            response.end();
+          }
+        }).listen(8082);
+
+
+        function validate_github_webhook(signature, payload_body) {
+          console.log('Running validate function');
+
+          var hmac = crypto.createHmac('sha1', process.env.WebPi_GitHub_Token);
+          hmac.update(payload_body);
+
+          const digest = Buffer.from('sha1=' + hmac.digest('hex'), 'utf8');
+          return crypto.timingSafeEqual(digest, signature);
+        }
+
+
+        function auto_update() {
+          console.log('Auto-updating...');
+          child_process.exec(SCRIPT_PATH_FROM_SUDOERS_FILE, (err, stdout, stderr) => {
+            if (err) {
+              return;
+            }
+
+            console.log(`stdout: ${stdout}`);
+            console.log(`stderr: ${stderr}`);
+          });
+        }
+
+
+
+## npm and node_modules
+
+1. The code above uses a package `body` to cut down on code verboseness. Install it by running `npm install body` from the root directory of your project. It will create a new file `package-lock.json` and a new folder `node_modules`.
+
+2. `package-lock.json` __should__ be checked into git. It helps maintain consistency across different installs.
+
+3. `node_modules` __should not__ be checked into git. We'll tell `git` to ignore it automatically in the next section.
+
+4. Confused? I was too. [This helped](https://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation/).
+
+
+## .gitignore
+
+`git` looks in a file named `.gitignore` to decide what files or directories it should automatically ignore. Usually this is used to exclude binaries or local build logs that shouldn't be checked into version control. The `.gitignore` file(s) can exist in any folder in the git repo: any directives will be applied to the folder it is in, and any subfolders.
+
+We'll tell `git` to ignore the `node_modules` folder by adding a file named `.gitignore` with these contents in the root directory of the repo:
+
+`node_modules/`
+
+Yep it's that simple.
+
+
+## *Refining auto-deploy*
+
+1. we only want push events to master
+
+
+## *Use debug instead of console.log*
 
 
 ## *VPN using Raspberry Pi*
