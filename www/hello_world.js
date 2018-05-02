@@ -48,12 +48,19 @@ http.createServer(function (request, response) {
       var signature = Buffer.from(headers['x-hub-signature'], 'utf8');
 
       if (validate_github_webhook(signature, payload_body)) {
-        console.log('Success');
-        response.statusCode = 200;
-        updateCounter++;
-        updateCounter %= 1000;
+        console.log('GitHub Validate Success');
 
-        auto_update();
+        const pushed_branch = JSON.parse(payload_body).ref;
+        console.log('Updated branch: ' + pushed_branch);
+        if (pushed_branch === 'refs/heads/master') {
+          response.statusCode = 200;
+          updateCounter++;
+          updateCounter %= 1000;
+
+          auto_update();
+        } else {
+          console.log('Not master branch. Ignoring.');
+        }
       } else {
         console.log('Failure');
         response.statusCode = 403;

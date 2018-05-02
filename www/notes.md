@@ -329,10 +329,23 @@ We'll tell `git` to ignore the `node_modules` folder by adding a file named `.gi
 Yep it's that simple.
 
 
-## *Refining auto-deploy*
+## Refining auto-deploy
 
-1. we only want push events to master
+We only want to redeploy when we get a push event to the master branch. The GitHub webhook includes a `ref` field which is the name of the branch that was updated. We can check that it is the master branch by making sure it matches the string `refs/heads/master`. Update the following in the `validate_github_webhook` `if` block.
 
+```
+const pushed_branch = JSON.parse(payload_body).ref;
+console.log('Updated branch: ' + pushed_branch);
+if (pushed_branch === 'refs/heads/master') {{
+  response.statusCode = 200;
+  updateCounter++;
+  updateCounter %= 1000;
+
+  auto_update();
+} else {
+  console.log('Not master branch. Ignoring.');
+}
+```
 
 ## *Use debug instead of console.log*
 
