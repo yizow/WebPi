@@ -63,6 +63,10 @@ We'll tell `git` to ignore the `node_modules` folder by adding a file named `.gi
 
 Yep it's that simple.
 
+If you use `vim`, you'll probably want to ignore the backup `.swp` files as well. Add:
+
+`*.swp`
+
 
 ## Setting up nginx
 
