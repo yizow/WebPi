@@ -30,6 +30,40 @@
         * `node --version`
         * `npm --version`
 
+
+## Initializing a git repo
+
+1. Change directory into the root of your project and execute `git init`
+
+2. I'm going to use github to host. [This guide](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) walks you through setting up your SSH key, and linking it to github.
+
+3. `git remote add origin git@github.com:your_url
+git push -u origin master`
+
+
+
+## npm and node_modules
+
+1. The code above uses a package `body` to cut down on code verboseness. Install it by running `npm install body` from the root directory of your project. It will create a new file `package-lock.json` and a new folder `node_modules`.
+
+2. `package-lock.json` __should__ be checked into git. It helps maintain consistency across different installs.
+
+3. `node_modules` __should not__ be checked into git. We'll tell `git` to ignore it automatically in the next section.
+
+4. Confused? I was too. [This helped](https://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation/).
+
+
+## .gitignore
+
+`git` looks in a file named `.gitignore` to decide what files or directories it should automatically ignore. Usually this is used to exclude binaries or local build logs that shouldn't be checked into version control. The `.gitignore` file(s) can exist in any folder in the git repo: any directives will be applied to the folder it is in, and any subfolders.
+
+We'll tell `git` to ignore the `node_modules` folder by adding a file named `.gitignore` with these contents in the root directory of the repo:
+
+`node_modules/`
+
+Yep it's that simple.
+
+
 ## Setting up nginx
 
 Next we're going to setup nginx to load a specific configuration file from user space. Our end goal is to have all out webserver code hosted in an easily updatable github folder.
@@ -98,7 +132,7 @@ Next we're going to setup nginx to load a specific configuration file from user 
     * Create a server to listen for requests. Lets listen on port 8081, since the default http port (80) is being used by nginx
 
             http.createServer(function (request, response) {
-               // Send the HTTP header 
+               // Send the HTTP header
                // HTTP Status: 200 : OK
                // Content Type: text/plain
                response.writeHead(200, {'Content-Type': 'text/plain'});
@@ -145,7 +179,7 @@ Next we're going to setup nginx to load a specific configuration file from user 
 1. Create a script that will do all our deployment things. Currently deployment is:
     * Copy over nginx scripts
     * restart nginx server
-    * restart node server  
+    * restart node server
 Don't forget to `chmod +x` the script to make it executable.
 
 2. Modify sudoers file using `visudo` to allow our script to be run by the current user as sudo without requiring a password input. This will allow us to automatically run this script when we get a specific request (such as, for example, a github pull request webhook).
@@ -196,16 +230,6 @@ An interesting side note is that most ISP routers will refuse to follow a DNS re
 2. Forward the SSH port you chose above.
 
 3. Forward port `80`. This is for http.
-
-
-## Initializing a git repo
-
-1. Change directory into the root of your project and execute `git init`
-
-2. I'm going to use github to host. [This guide](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) walks you through setting up your SSH key, and linking it to github.
-
-3. `git remote add origin git@github.com:your_url
-git push -u origin master`
 
 
 ## *Github Webhooks*
@@ -304,29 +328,6 @@ git push -u origin master`
             console.log(`stderr: ${stderr}`);
           });
         }
-
-
-
-## npm and node_modules
-
-1. The code above uses a package `body` to cut down on code verboseness. Install it by running `npm install body` from the root directory of your project. It will create a new file `package-lock.json` and a new folder `node_modules`.
-
-2. `package-lock.json` __should__ be checked into git. It helps maintain consistency across different installs.
-
-3. `node_modules` __should not__ be checked into git. We'll tell `git` to ignore it automatically in the next section.
-
-4. Confused? I was too. [This helped](https://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation/).
-
-
-## .gitignore
-
-`git` looks in a file named `.gitignore` to decide what files or directories it should automatically ignore. Usually this is used to exclude binaries or local build logs that shouldn't be checked into version control. The `.gitignore` file(s) can exist in any folder in the git repo: any directives will be applied to the folder it is in, and any subfolders.
-
-We'll tell `git` to ignore the `node_modules` folder by adding a file named `.gitignore` with these contents in the root directory of the repo:
-
-`node_modules/`
-
-Yep it's that simple.
 
 
 ## Refining auto-deploy
