@@ -70,7 +70,7 @@ If you use `vim`, you'll probably want to ignore the backup `.swp` files as well
 
 ## Setting up nginx
 
-Next we're going to setup nginx to load a specific configuration file from user space. Our end goal is to have all out webserver code hosted in an easily updatable github folder.
+Next we're going to setup nginx to load a specific configuration file from user space. Our end goal is to have all our webserver code hosted in an easily updatable github folder.
 
 1. I will be putting my website files in `~/webserver/www`. Replace the path in the following steps with wherever you decide to keep your files.
 
@@ -201,7 +201,7 @@ Don't forget to `chmod +x` the script to make it executable.
 3. `sudo apt-get install ddclient`
     1. When it asks for service, choose other, then enter in `api.dynu.com`
     2. Enter your credentials from above when prompted.
-    3. Follow the reset of the ddclient setup.
+    3. Follow the rest of the ddclient setup.
     4. By default, ddclient will be started on boot, and check for a changed IP once every 5 minutes.
 
 4. We're going to use a webservice to get our public IP, because my Raspberry Pi is behind a router.
