@@ -241,6 +241,7 @@ An interesting side note is that most ISP routers will refuse to follow a DNS re
 1. Setup webhook for new github repo from [this guide](https://developer.github.com/webhooks/). We'll only be listening for push events.
 
 2. Set the secret token on the Raspberry Pi by adding `export SECRET_TOKEN=your_token` to the end of your `~/.bashrc` file. You can have the changes take effect immediately by running `source ~/.bashrc`.
+  * Make sure your code matches the name you chose in `process.env.{ENVIRONMENT_VARIABLE_NAME}` in the javascript file.
 
 3. Configure nginx to forward those webhooks to a particular port.
 
