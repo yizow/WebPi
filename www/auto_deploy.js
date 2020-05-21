@@ -1,3 +1,4 @@
+var http = require('http');
 var crypto = require('crypto');
 var child_process= require('child_process');
 var textBody = require('body');
