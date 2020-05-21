@@ -109,16 +109,27 @@ Next we're going to setup nginx to load a specific configuration file from user 
 
 1. I will be putting my website files in `~/WebPi/www`. Replace the path in the following steps with wherever you decide to keep your files.
 
-2. I will be putting my nginx configuration files in `~/WebPi/nginx`. We will be copying the contents of this folder into `/etc/nginx/`. This requires sudo. Eventually we'll automate this with a script.
+2. I will be putting my nginx configuration files in `~/WebPi/nginx`. We'll modify the original `nginx.conf` file to just `include` our custom one.
 
-3. Let's create a minimal nginx configuration file.
+    You'll want to make a backup of the original `nginx.conf` file. This is just good practice before changing anything. You'll probably need `sudo` for some of these commands.
+
+    ```bash
+    sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.old
+    ```
+
+    Delete everything in `/etc/nginx/nginx/conf` and replace with:
+
+    ```nginx
+    include /home/$USER/WebPi/nginx/nginx.conf;
+    ```
+    * Replace `$USER` with your username.
+
+3. Our minimal `nginx.conf` file:
 
     ```bash
     cd ~/WebPi/nginx
     vim nginx.conf
     ```
-
-    In the `server_name` directive, replace with your host name.
 
     ```nginx
     events{
@@ -160,19 +171,10 @@ Next we're going to setup nginx to load a specific configuration file from user 
     ```
 
 
-5. Finally, lets copy over our new nginx configuration file.
-
-   You'll want to make a backup of the original nginx.conf file. This is just good practice before changing anything. You'll probably need `sudo` for some of these commands.
-
-    ```bash
-    sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.old
-    sudo cp ~/WebPi/nginx/nginx.conf /etc/nginx/
-    ```
-
 6. Lets restart the nginx server and see if it works!
 
     ```bash
-    sudo systemctl restart nginx.service
+    systemctl restart nginx.service
     ```
 
     You can check the timestamps of `sudo systemctl status nginx.service` to verify that your command took effect.
@@ -304,22 +306,23 @@ If your Rasbperry Pi is sitting behind a router like mine is, you'll need to set
 
 Instead of having to manually type a series of commands every time we want to deploy an update, we can Create a script that will do everything with a single command. Currently deployment is:
 
-  1. Copy over nginx scripts
-  2. restart nginx server
-  3. restart node server
+  1. restart nginx server
+  2. restart node servers
 
   Create the file `~/WebPi/update.sh`
 
   ```bash
   #!/bin/sh
   # Above line is known as a 'shebang', and is used to tell Linux what program to execute this file with.
+
   echo 'Deploying WebPi update.'
 
-  # Copy over nginx configuration files
-  sudo cp --backup ~/WebPi/nginx/nginx.conf /etc/nginx/nginx.conf
+  # Get git updates
+  cd ~/WebPi
+  git pull
 
   # Restart nginx service
-  sudo systemctl restart nginx.service
+  systemctl restart nginx.service
 
   # Restart node.js service.
   pm2 restart all
@@ -330,19 +333,6 @@ Instead of having to manually type a series of commands every time we want to de
   ```bash
   chmod +x ~/WebPi/update.sh
   ```
-
-Modify sudoers file using `visudo` to allow our script to be run by the current user as sudo without requiring a password input. This will allow us to automatically run this script when we get a specific request (such as, for example, a github pull request webhook).
-
-```bash
-sudo visudo
-```
-
-Replace `$USER` with your username, and `$PATH` with the full path to your update script. Add the following line to the end of the file, BEFORE the `#include` directive.
-
-```bash
-$USER ALL=(ALL) NOPASSWD: $PATH
-```
-
 
 ## Github Webhooks
 
@@ -507,6 +497,16 @@ if (pushed_branch === 'refs/heads/master') {{
   console.log('Not master branch. Ignoring.');
 }
 ```
+
+We also only want to update if we're on `master` branch. Prepend the following to `update.sh`.
+
+```bash
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+if [[ "$BRANCH" != "master" ]]; then
+  echo 'Aborting script';
+fi
+```
+
 
 ## *Use debug instead of console.log*
 
