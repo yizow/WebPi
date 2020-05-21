@@ -67,7 +67,7 @@ function validate_github_webhook(signature, payload_body) {
 
 function auto_update() {
   console.log('Auto-updating...');
-  child_process.exec('sudo /home/yizow/WebPi/update.sh', (err, stdout, stderr) => {
+  child_process.exec('/home/yizow/WebPi/update.sh -a', (err, stdout, stderr) => {
     if (err) {
       return;
     }
