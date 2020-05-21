@@ -462,7 +462,7 @@ function validate_github_webhook(signature, payload_body) {
 
 function auto_update() {
   console.log('Auto-updating...');
-  child_process.exec(SCRIPT_PATH_FROM_SUDOERS_FILE, (err, stdout, stderr) => {
+  child_process.exec('UPDATE_SCRIPT_FULL_PATH', (err, stdout, stderr) => {
     if (err) {
       return;
     }
@@ -482,15 +482,13 @@ pm2 save
 
 ## Refining auto-deploy
 
-We only want to redeploy when we get a push event to the master branch. The GitHub webhook includes a `ref` field which is the name of the branch that was updated. We can check that it is the master branch by making sure it matches the string `refs/heads/master`. Update the following in the `validate_github_webhook` `if` block.
+We only want to automatically redeploy when we get a push event to the master branch. The GitHub webhook includes a `ref` field which is the name of the branch that was updated. We can check that it is the master branch by making sure it matches the string `refs/heads/master`. Update the following in the `validate_github_webhook` `if` block.
 
 ```node
 const pushed_branch = JSON.parse(payload_body).ref;
 console.log('Updated branch: ' + pushed_branch);
 if (pushed_branch === 'refs/heads/master') {{
   response.statusCode = 200;
-  updateCounter++;
-  updateCounter %= 1000;
 
   auto_update();
 } else {
@@ -501,11 +499,24 @@ if (pushed_branch === 'refs/heads/master') {{
 We also only want to update if we're on `master` branch. Prepend the following to `update.sh`.
 
 ```bash
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [[ "$BRANCH" != "master" ]]; then
-  echo 'WebPi not on master, not updating';
-  exit 1;
-fi
+# If called with the -a flag (Autodeploy), only update if we're on master
+while getopts ":m" opt; do
+  case ${opt} in
+    a )
+      BRANCH=$(git rev-parse --abbrev-ref HEAD)
+      if [[ "$BRANCH" != "master" ]]; then
+        echo 'WebPi not on master, not updating';
+        exit 1;
+      fi
+      ;;
+  esac
+done
+```
+
+And modify the `auto_deploy` function `child_process.exec` call to include the `-a` flag:
+
+```node
+child_process.exec('UPDATE_SCRIPT_FULL_PATH -a', (err, stdout, stderr) => {
 ```
 
 

@@ -1,11 +1,18 @@
 #!/bin/bash
 # Above line is known as a 'shebang', and is used to tell Linux what program to execute this file with.
 
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [[ "$BRANCH" != "master" ]]; then
-  echo 'WebPi not on master, not updating';
-  exit 1;
-fi
+# If called with the -a flag (Autodeploy), only update if we're on master
+while getopts ":a" opt; do
+  case ${opt} in
+    a )
+      BRANCH=$(git rev-parse --abbrev-ref HEAD)
+      if [[ "$BRANCH" != "master" ]]; then
+        echo 'WebPi not on master, not updating';
+        exit 1;
+      fi
+      ;;
+  esac
+done
 
 
 echo 'Deploying WebPi update'
