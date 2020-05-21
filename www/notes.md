@@ -503,7 +503,7 @@ We also only want to update if we're on `master` branch. Prepend the following t
 ```bash
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 if [[ "$BRANCH" != "master" ]]; then
-  echo 'Aborting script';
+  echo 'WebPi not on master, not updating';
   exit 1;
 fi
 ```
