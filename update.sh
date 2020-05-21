@@ -2,7 +2,7 @@
 # Above line is known as a 'shebang', and is used to tell Linux what program to execute this file with.
 
 # If called with the -a flag (Autodeploy), only update if we're on master
-while getopts ":m" opt; do
+while getopts ":a" opt; do
   case ${opt} in
     a )
       BRANCH=$(git rev-parse --abbrev-ref HEAD)
