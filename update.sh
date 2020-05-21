@@ -15,7 +15,7 @@ cd ~/WebPi
 git pull
 
 # Restart nginx service
-/usr/bin/systemctl restart nginx.service
+sudo /usr/bin/systemctl restart nginx.service
 
 # Restart node.js service.
 pm2 restart all
