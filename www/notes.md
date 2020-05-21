@@ -312,7 +312,7 @@ Instead of having to manually type a series of commands every time we want to de
   Create the file `~/WebPi/update.sh`
 
   ```bash
-  #!/bin/sh
+  #!/bin/bash
   # Above line is known as a 'shebang', and is used to tell Linux what program to execute this file with.
 
   echo 'Deploying WebPi update.'
@@ -322,7 +322,7 @@ Instead of having to manually type a series of commands every time we want to de
   git pull
 
   # Restart nginx service
-  systemctl restart nginx.service
+  /usr/bin/systemctl restart nginx.service
 
   # Restart node.js service.
   pm2 restart all
@@ -504,6 +504,7 @@ We also only want to update if we're on `master` branch. Prepend the following t
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 if [[ "$BRANCH" != "master" ]]; then
   echo 'Aborting script';
+  exit 1;
 fi
 ```
 
