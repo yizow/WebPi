@@ -6,7 +6,7 @@ var md = require('markdown-it')()
 var url = require('url');
 
 var blog_root = 'www/blog/';
-var template = fs.readFileSync(blog_root + 'test.html');
+var template = 'template.html';
 
 http.createServer(function (request, response) {
   response.writeHead(200, {'Content-Type': 'text/html'});
@@ -21,7 +21,7 @@ http.createServer(function (request, response) {
 
   var markdown = md.render(fs.readFileSync(blog_root + blog_post, 'utf-8'));
 
-  ejs.renderFile(blog_root + 'test.html', {title: blog_post, markdown: markdown}, {}, (err, str) => {
+  ejs.renderFile(blog_root + template, {title: blog_post, markdown: markdown}, {}, (err, str) => {
     if (err) {
       console.log(err);
     } else {
