@@ -1,4 +1,3 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Blog Index</title></head><body><textarea theme="united">
 # Welcome to my (work in progress) blog
 
 This is intended to be the main landing page of the blog. It is a rather simplistic placeholder for now, used only to record potential future work.
@@ -11,11 +10,11 @@ So why do all this construction work instead of just using something like github
 4. I like lightweight frameworks. I can understand the internal workings better, I feel more in control, I dislike bloat and extra fancy features I don't want to bother learning. What could be more lightweight than buidling a bug-ridden blog infrastructure from the ground up?
 
 
-### Why blog
+# Why blog
 
 Stay tuned for `blog_posts[1]`
 
-#### ToDo:
+# ToDo:
 
 0. Add an actual index to this page
 
@@ -49,4 +48,3 @@ Stay tuned for `blog_posts[1]`
     * \#im_not_a_professional
 
 8. Add analytics
-</textarea><script type="text/javascript" src="//lbesson.bitbucket.io/md/strapdown.min.js"></script></body></html>
