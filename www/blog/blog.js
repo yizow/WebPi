@@ -9,7 +9,6 @@ var blog_root = 'www/blog/';
 var template = 'template.html';
 
 http.createServer(function (request, response) {
-  response.writeHead(200, {'Content-Type': 'text/html'});
 
   var blog_post = 'index.md'
   var query = url.parse(request.url, true).pathname;
@@ -19,7 +18,14 @@ http.createServer(function (request, response) {
     blog_post = matches[1];
   }
 
-  var markdown = md.render(fs.readFileSync(blog_root + blog_post, 'utf-8'));
+  var blog_path = blog_root + blog_post;
+  if (!fs.existsSync(blog_path)) {
+    response.writeHead(404, {'Content-Type': 'text/html'}).end('404\nNot found');
+    return;
+  }
+
+  response.writeHead(200, {'Content-Type': 'text/html'});
+  var markdown = md.render(fs.readFileSync(blog_path, 'utf-8'));
 
   ejs.renderFile(blog_root + template, {title: blog_post, markdown: markdown}, {}, (err, str) => {
     if (err) {
