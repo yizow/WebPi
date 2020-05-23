@@ -8,20 +8,26 @@ var url = require('url');
 var blog_root = 'www/blog/';
 var template = 'template.html';
 
+// YYYY_MM_DD_BLOG_TITLE.md
+var blog_format = /([0-9]{4}_[0-9]{2}_[0-9]{2}_(.*)\.md)$/;
+
 http.createServer(function (request, response) {
 
-  var blog_post = 'index.md'
+  var blog_post = '0000_00_00_index.md'
   var query = url.parse(request.url, true).pathname;
-  var matches = query.match(/[^/?]*[^/?]/g);
 
-  if (matches.length > 1) {
-    var index = matches[1].match(/blog_posts\[([0-9]*)\]/);
-    if (index.length > 1) {
-      index = index[1];
-      // get blog_post by index
-      blog_post = 'index.md';
-    } else {
-      blog_post = matches[1];
+  var is_indexed = /blog_posts\[([0-9]*)\]/;
+  if (is_indexed.test(query)) {
+    var index = parseInt(query.match(is_indexed)[1]);
+    console.log('index', index, query);
+    // get blog_post by index
+    blog_posts = blog_posts_by_name();
+    if (index < blog_posts.length) {
+      blog_post = blog_posts[index];
+  }
+
+  if (blog_format.test(query)) {
+      blog_post = query.match(blog_format)[1];
     }
   }
 
@@ -34,11 +40,17 @@ http.createServer(function (request, response) {
   response.writeHead(200, {'Content-Type': 'text/html'});
   var markdown = md.render(fs.readFileSync(blog_path, 'utf-8'));
 
-  ejs.renderFile(blog_root + template, {title: blog_post, markdown: markdown}, {}, (err, str) => {
+  ejs.renderFile(blog_root + template, {title: blog_post.match(blog_format)[2], markdown: markdown}, {}, (err, str) => {
     if (err) {
       console.log(err);
     } else {
       response.end(str);
     }
   });
-}).listen(8083)
+}).listen(8083);
+
+function blog_posts_by_name() {
+  return fs.readdirSync(blog_root, {withFileTypes: true})
+            .filter(blog_post => blog_post.isFile() && blog_format.test(blog_post.name))
+            .map(dirent => dirent.name);
+}
