@@ -15,7 +15,14 @@ http.createServer(function (request, response) {
   var matches = query.match(/[^/?]*[^/?]/g);
 
   if (matches.length > 1) {
-    blog_post = matches[1];
+    var index = matches[1].match(/blog_posts\[([0-9]*)\]/);
+    if (index.length > 1) {
+      index = index[1];
+      // get blog_post by index
+      blog_post = 'index.md';
+    } else {
+      blog_post = matches[1];
+    }
   }
 
   var blog_path = blog_root + blog_post;
