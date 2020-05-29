@@ -16,18 +16,24 @@ http.createServer(function (request, response) {
   var blog_post = '0000_00_00_index.md'
   var query = url.parse(request.url, true).pathname;
 
+  console.log("query", query);
+
   var is_indexed = /blog_posts\[([0-9]*)\]/;
   if (is_indexed.test(query)) {
+    console.log("is indexed");
     var index = parseInt(query.match(is_indexed)[1]);
     // get blog_post by index
     blog_posts = blog_posts_by_name();
     if (index < blog_posts.length) {
       blog_post = blog_posts[index];
+    }
   }
 
   if (blog_format.test(query)) {
+      console.log("is blog format");
       blog_post = query.match(blog_format)[1];
-    }
+  } else {
+    console.log("isn't blog format");
   }
 
   var blog_path = blog_root + blog_post;
