@@ -18,7 +18,7 @@ http.createServer(function (request, response) {
 
   var is_indexed = /blog_posts\[([0-9]*)\]/;
 
-  if (query == "/blog/") {
+  if (query == "/blog/" || query == "/blog") {
   } else if (is_indexed.test(query)) {
     var index = parseInt(query.match(is_indexed)[1]);
     // get blog_post by index
