@@ -17,17 +17,19 @@ http.createServer(function (request, response) {
   var query = url.parse(request.url, true).pathname;
 
   var is_indexed = /blog_posts\[([0-9]*)\]/;
-  if (is_indexed.test(query)) {
+
+  if (query == "/blog/") {
+  } else if (is_indexed.test(query)) {
     var index = parseInt(query.match(is_indexed)[1]);
     // get blog_post by index
     blog_posts = blog_posts_by_name();
     if (index < blog_posts.length) {
       blog_post = blog_posts[index];
     }
-  }
-
-  if (blog_format.test(query)) {
+  } else if (blog_format.test(query)) {
       blog_post = query.match(blog_format)[1];
+  } else {
+    blog_post = query;
   }
 
   var blog_path = blog_root + blog_post;
