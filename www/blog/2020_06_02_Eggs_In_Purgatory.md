@@ -8,6 +8,7 @@ I learned that day they have very different {flavor unit} : volume ratios.
 # Iteration 1
 
 ## Cooking Stream of Consciousness
+
 Didn't have diced/ canned tomatos as the recipe called for. Instead I have both fresh tomatos and tomato sauce.
 And I just don't have parsley.
 For this first iteration I chose to use fresh tomatos: 5 of em worked out to ~25 ounces
@@ -40,3 +41,27 @@ Not sure how i feel about the purgatory eggs. I find myself just eating them as 
 Should not have attempted presentation of layering over rice. Much better to have just left it in pot, and scooped out.
 
 Salt and pepper also seem to be good. I added in as very first step with onions and garlic. Should make more accurate measurements next time.
+
+# Iteration 2
+
+## Cooking tweaks
+
+I'm cheating when adding brown sugar, maybe adding up to 3, 3.5 teaspoons?
+2 fresh tomatos, 1 15 ounce can of tomato sauce.
+Salt/pepper: 1/2 teaspoon each
+Used one red onion, one yellow onion.
+Diced the tomatos a lot more
+
+## Takeaway
+
+Need to use 1/4 teaspoon pepper only
+
+Tomato sauce does not exactly make it creamier
+
+Too much onion to tomato ratio. Either need less onion, or more tomato/tomato sauce
+
+Tomato sauce does not have same mass as fresh tomatoes
+
+I added more spinach than last time, like 3.5, 4 handfuls, and it seems fine. everything shrivels.
+
+Is a little bit too sweet, can stop cheating as much on the brown sugar.
