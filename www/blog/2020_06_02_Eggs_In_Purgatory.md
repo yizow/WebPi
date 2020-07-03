@@ -52,7 +52,7 @@ Salt/pepper: 1/2 teaspoon each
 Used one red onion, one yellow onion.
 Diced the tomatos a lot more
 
-## Takeaway
+## Takeaways
 
 Need to use 1/4 teaspoon pepper only
 
@@ -65,3 +65,38 @@ Tomato sauce does not have same mass as fresh tomatoes
 I added more spinach than last time, like 3.5, 4 handfuls, and it seems fine. everything shrivels.
 
 Is a little bit too sweet, can stop cheating as much on the brown sugar.
+
+# Iteration 3
+
+## Cooking Tweaks
+
+2.5 teaspoon brown sugar
+One larger white onion, about 2 cups worth.
+1/2 teaspoon salt
+1/4 teaspoon pepper
+Using 2 cans of tomato sauce this time (15 ounce each, total 30 ounce)
+
+## Takeaways
+
+Extremely liquid-y when poured out of can; after about 7 minutes of cooking starts congealing.
+The texture definitely looks a lot more different. This one appears to just be a slightly thick sauce.
+Definitely feels like "less" stuff. May need to use 3 cans if I want to do pure tomato sauce (pending taste test)
+
+## Taste test
+
+Oh god that is not good.
+Two cans of tomato sauce is way too sodium heavy, and overwhelms everything flavor wise. It's way too salty for me.
+One can of tomato sauce for the herbs and flavoring might be nice to use.
+
+# Iteration 4
+
+## Cooking Tweaks
+
+Used pure fresh tomatos this time
+2 smaller white onions
+
+Otherwise, recipe is becoming prtty set.
+
+## Takeaways
+
+Definitely want a can of tomato sauce to add thickness and texture
