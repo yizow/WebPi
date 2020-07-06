@@ -25,10 +25,10 @@ What follows is a lightly edited version of thoughts I had during / after cookin
 
 Final results [here!](http://yizheliu.com/recipes/eggs_in_purgatory.md) Next time around I'll be sure to take more pictures. For now, here's a random smattering.
 
-![Prep work](http://yizheliu.com/resources/eggs_in_purgatory_prep.jpg)
-![Plated](http://yizheliu.com/resources/eggs_in_purgatory_plated.jpg)
-![Almost finished](http://yizheliu.com/resources/eggs_in_purgatory_almost_finished.jpg)
-![Finished](http://yizheliu.com/resources/eggs_in_purgatory_finished.jpg)
+![Prep work](http://yizheliu.com/eggs_in_purgatory_prep.jpg)
+![Plated](http://yizheliu.com/eggs_in_purgatory_plated.jpg)
+![Almost finished](http://yizheliu.com/eggs_in_purgatory_almost_finished.jpg)
+![Finished](http://yizheliu.com/eggs_in_purgatory_finished.jpg)
 
 # Iteration 1
 
