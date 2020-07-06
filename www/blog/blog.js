@@ -2,7 +2,8 @@ var http = require('http');
 var fs = require('fs');
 var ejs = require('ejs');
 var md = require('markdown-it')()
-          .use(require('markdown-it-sup'));
+          .use(require('markdown-it-sup'))
+          .use(require('markdown-it-imsize'));
 var url = require('url');
 
 var blog_root = 'www/blog/';
