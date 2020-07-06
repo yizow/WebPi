@@ -10,6 +10,13 @@ And so, my decision to find a recipe off the internet, _and then repeat it 4 tim
 
 This is actually the second recipe I'm trying; after finishing my [meatloaf experiements](http://yizheliu.com/recipes/meatloaf.md), a friend suggested than I chronicle the whole process as well as the result.
 
+Final results [here!](http://yizheliu.com/recipes/eggs_in_purgatory.md) Next time around I'll be sure to take more pictures. For now, here's a random smattering.
+
+![Prep work](http://yizheliu.com/eggs_in_purgatory_prep.jpg =300x)  
+![Plated](http://yizheliu.com/eggs_in_purgatory_plated.jpg =300x)  
+![Almost finished](http://yizheliu.com/eggs_in_purgatory_almost_finished.jpg =300x)  
+![Finished](http://yizheliu.com/eggs_in_purgatory_finished.jpg =300x)  
+
 
 # Iteration 0
 
@@ -22,13 +29,6 @@ Although to be fair, the recipe called for fresh oregano/basil, and all I had on
 The previous recipe went so poorly that I was going to just abandon it, until a friend sent [this recipe](https://tworedbowls.com/2018/10/26/gochujang-eggs-in-purgatory/) that seemed very similar, so I figured, eh, let's give it one more try. I'm glad I did because it turned out amazing.
 
 What follows is a lightly edited version of thoughts I had during / after cooking tasting.
-
-Final results [here!](http://yizheliu.com/recipes/eggs_in_purgatory.md) Next time around I'll be sure to take more pictures. For now, here's a random smattering.
-
-![Prep work](http://yizheliu.com/eggs_in_purgatory_prep.jpg =300x)  
-![Plated](http://yizheliu.com/eggs_in_purgatory_plated.jpg =300x)  
-![Almost finished](http://yizheliu.com/eggs_in_purgatory_almost_finished.jpg =300x)  
-![Finished](http://yizheliu.com/eggs_in_purgatory_finished.jpg =300x)  
 
 # Iteration 1
 
