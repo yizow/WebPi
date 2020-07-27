@@ -1,6 +1,6 @@
-![](http://yizheliu.com/beef_stew_iteration_3.jpg =300x)  
-![](http://yizheliu.com/beef_stew_iteration_4.jpg =300x)  
-![](http://yizheliu.com/beef_stew_iteration_4_finished.jpg =300x)  
+![](http://yizheliu.com/beef_stew_iteration_3.jpg =300x)
+![](http://yizheliu.com/beef_stew_iteration_4.jpg =300x)
+![](http://yizheliu.com/beef_stew_iteration_4_finished.jpg =300x)
 
 # Ingredients
 
