@@ -29,6 +29,8 @@
 
 # Sources
 [Iteration 1](https://www.allrecipes.com/recipe/14685/slow-cooker-beef-stew-i/)
+
 [Iteration 2](https://www.spendwithpennies.com/crockpot-beef-stew/)
-[Iteration 3](https://www.reddit.com/r/slowcooking/comments/4f46o0/finally_nailed_a_delicious_beef_stew_recipe_tips/)
+
+[Final Iteration](https://www.reddit.com/r/slowcooking/comments/4f46o0/finally_nailed_a_delicious_beef_stew_recipe_tips/)
 
