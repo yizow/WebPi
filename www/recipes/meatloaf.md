@@ -5,6 +5,7 @@
 * 1/2 lb ground beef
 * 1 1/2 cup bread crumbs
 * 1 1/2 cup diced yellow onion
+* 1/2 cup (one handful?) shredded carrots
 * 1/2 cup milk
 * 2 large eggs, beaten
 * 2 tbsp ketchup
