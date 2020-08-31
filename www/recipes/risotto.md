@@ -2,16 +2,16 @@
 
 # Ingredients
 
-* 1/2 lb ground pork
+* 1/2 lb. ground pork
 * 3 cups chicken broth
 * 2 portebello mushrooms
-* 1 lb white mushrooms
+* 1 lb. white mushrooms
 * 1 onion, diced
 * 1 1/2 cups rice
 * 1/2 cup dry white wine
-* 4 tbspn butter
+* 4 tbsp. butter
 * 1/3 cup Parmesan cheese
-* 3 tbspn finely chopped chives.
+* 3 tbsp. finely chopped chives.
 
 # Recipe
 
