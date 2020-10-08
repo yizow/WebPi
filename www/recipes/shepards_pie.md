@@ -1,3 +1,5 @@
+![](http://yizheliu.com/shepards_pie_finished.jpg =300x)
+
 # Ingredients
 
 ## Meat Filling:
@@ -21,7 +23,7 @@
 * 1/2 cup milk
 * 1/2 tsp. garlic powder
 * 1/2 tsp. salt
-* 1/2 tsp. pepper
+* 1/4 tsp. pepper
 * 1/4 cup parmesan cheese
 
 # Recipe
