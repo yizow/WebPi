@@ -1,6 +1,6 @@
 ![](http://yizheliu.com/red_braised_pork_finished_1.jpg =300x)
 ![](http://yizheliu.com/red_braised_pork_finished_2.jpg =300x)
-![](http://yizheliu.com/red_braised_pork_pre_simmer.jpg =300x)
+![](http://yizheliu.com/red_braised_pork_pre_simmer.jpeg =300x)
 
 # Ingredients
 * 1 lb. pork belly, bite size chunks
