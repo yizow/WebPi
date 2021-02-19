@@ -3,7 +3,7 @@
 ![](http://yizheliu.com/potato_leek_bacon_cooking.jpg =300x)
 
 # Ingredients
-* 2 lb. leek. (Approximately one organic leek, which is inexplicably 4 times as big as the non-orgnaic leek)
+* 2 lb. leek. (Approximately one organic leek, which is inexplicably 4 times as big as the non-organic leek)
 * 4 cloves garlic, minced
 * 2/3 lb. bacon
 * 2 lb. potato (Around 3 large potatos)
