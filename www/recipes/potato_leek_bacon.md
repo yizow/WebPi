@@ -3,7 +3,7 @@
 ![](http://yizheliu.com/potato_leek_bacon_cooking.jpg =300x)
 
 # Ingredients
-* 1.5 lb. leek. (Two big-ass organic leek)
+* 2 lb. leek. (Approximately one organic leek, which is inexplicably 4 times as big as the non-orgnaic leek)
 * 4 cloves garlic, minced
 * 2/3 lb. bacon
 * 2 lb. potato (Around 3 large potatos)
@@ -23,6 +23,7 @@
 * Add in the potatos and chicken stock. Bring to a boil, and simmer for 15 minutes, until potatos soft.
 * Use an immersion blender to blend until desired consistency.
 * Add in the cream, and re-add in the bacon. Stir and simmer for about 5 minutes more.
+* Salt to taste.
 * Serve with bread.
 
 # Sources
