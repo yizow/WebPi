@@ -2,12 +2,12 @@
 ![](http://yizheliu.com/pork_loin_bean_curd_2.jpg =300x)
 
 # Ingredients
-# Stir Fry
-1/2 lb. pork loin
-1/2 lb. bean curd (dried tofu)
-2 green onion
-4 cloves garlic
-Some sichuan peppercorn
+## Stir Fry
+* 1/2 lb. pork loin
+* 1/2 lb. bean curd (dried tofu)
+* 2 green onion
+* 4 cloves garlic
+* Some sichuan peppercorn
 
 ## Meat Marinade
 * 1/4 tsp salt
