@@ -32,4 +32,4 @@
 ## Tweaks
 * More breadcrumbs + egg to make loaf firmer
 * Add onions, shredded carrots
-*1/20/50 beef/pork
+* 50/50 beef/pork
