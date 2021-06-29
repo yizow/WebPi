@@ -51,6 +51,6 @@
 * Brown on both sides, starting with the side with folds; tiny bit of oil, about 3-4 minutes on medium-high heat on both sides.
 
 # Sources
-[Nacho Cheese](https://www.allrecipes.com/recipe/24738/nacho-cheese-sauce/)
-[Taco Seasoning](https://www.allrecipes.com/recipe/46653/taco-seasoning-i/)
+[Nacho Cheese](https://www.allrecipes.com/recipe/24738/nacho-cheese-sauce/)\
+[Taco Seasoning](https://www.allrecipes.com/recipe/46653/taco-seasoning-i/)\
 [Original Recipe](https://www.homemadefoodjunkie.com/taco-bell-crunchwrap-supreme-copycat-recipe/)
