@@ -1,6 +1,6 @@
 # Target Audience
 
-This document is aimed at an absolute beginner: I'm writing this for pre-college freshman me<sup>1</sup>, who chose to install Linux Mint instead of Ubuntu because 
+This document is aimed at an absolute beginner: I'm writing this for pre-college freshman me<sup>1</sup>, who chose to install Linux Mint instead of Ubuntu because
 
 > what the hell is Ubuntu, that doesn't have 'linux' in its name.
 
@@ -97,7 +97,7 @@ Edit the file with `sudo visudo`, then append the following to it, BEFORE the `#
 
 2. I'm going to use github to host. [This guide](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) walks you through setting up your SSH key, and linking it to github.
 
-3. 
+3.
     ```bash
     git remote add origin git@github.com:your_url
     git push -u origin master`
@@ -117,7 +117,7 @@ Next we're going to setup nginx to load a specific configuration file from user 
     sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.old
     ```
 
-    Delete everything in `/etc/nginx/nginx/conf` and replace with:
+    Delete everything in `/etc/nginx/nginx.conf` and replace with:
 
     ```nginx
     include /home/$USER/WebPi/nginx/nginx.conf;
@@ -234,11 +234,11 @@ Reboot and check that both `127.0.0.1` and `127.0.0.1:8081` are available.
 
 Next we're going to set up nginx as a reverse proxy for our node server. We want all http requests coming in on port 80 to first go through nginx, which can then decide to pass on the request to our node server.
 
-Open up your nginx config file, and inside the `http` block, add a new `location` block:
+Open up your nginx config file, and inside the `http` and `server` block, add a new `location` block:
 
 ```nginx
 location /node {
-  proxy_pass http://127.0.0.1:8081
+  proxy_pass http://127.0.0.1:8081;
 }
 ```
 
@@ -297,7 +297,7 @@ If your Rasbperry Pi is sitting behind a router like mine is, you'll need to set
 
     An interesting side note is that most ISP routers will refuse to follow a DNS response if the resulting IP is it's own public address. This means that anywhere _except_ in your home, you'll be able to access your Raspberry Pi website by going to `your_url.com`. However, this won't work on your home network! You'll have to navigate directly to the IP address assigned to the Raspberry Pi. Having a static IP here makes things much easier.
 
-2. Forward port `80`. This is for http.
+2. Forward port `80`. This is for http. Your isp may block port 80, in which case use another port, potentially 8080.
 
 3. Forward the SSH port you chose above. This will allow you to remotely `ssh` in via `ssh -p your_port your_username@your_url.com`.
 
@@ -336,7 +336,7 @@ Instead of having to manually type a series of commands every time we want to de
 
 ## Github Webhooks
 
-Github can create webhooks to automatically notify us about changes made to our repo. We can leverage to automate deployment of any changes we make. 
+Github can create webhooks to automatically notify us about changes made to our repo. We can leverage to automate deployment of any changes we make.
 
 1. Setup webhook for new github repo from [this guide](https://developer.github.com/webhooks/). We'll only be listening for push events.
 
