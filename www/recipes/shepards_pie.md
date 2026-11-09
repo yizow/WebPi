@@ -3,56 +3,63 @@
 # Ingredients
 
 ## Meat Filling:
-* 1 cup chopped onion
-* 1 lb. ground pork
-* 2 tsp. dried parsley leaves
-* 1 tsp. dried rosemary leaves
-* 1 tsp. dried thyme leaves
-* 1/2 tsp. salt
-* 1/2 tsp. pepper
-* 1 tbsp. Worchestershire sauce
-* 3 garlic cloves, minced
-* 2 tbsp. flour
-* 4 tbsp. tomato sauce
-* 1 cup beef broth
-* 1 1/2 cup frozen mixed peas, carrots, corn
+- 1 lb. ground beef (90/10)
+- 1 tbsp. cooking oil
+- 1 medium yellow onion, diced
+- 1.5 tsp. minced garlic
+- 1/4 cup pizza sauce (e.g., Bianco DiNapoli) or 2 tbsp. tomato paste
+- 2 tbsp. all-purpose flour
+- 1 cup hot tap water + 1 tsp. Totole granulated chicken bouillon (or 1 cup beef broth)
+- 1 tbsp. soy sauce
+- 1 tsp. Chinkiang black vinegar
+- 1 tiny pinch of sugar
+- 1.5 cups frozen peas and corn
+- Salt and freshly cracked black pepper, to taste
 
 ## Potato Topping:
-* 1 1/2 - 2 lb potatos
-* 4 tbsp. unsalted butter
-* 1/2 cup milk
-* 1/2 tsp. garlic powder
-* 1/2 tsp. salt
-* 1/4 tsp. pepper
-* 1/4 cup parmesan cheese
+- 1.5 - 2 lbs. potatoes, peeled and cut into 1-inch cubes
+- 4 tbsp. (1/2 stick) unsalted butter, brought to room temperature
+- 1/3 cup milk (lactose-free or whole), brought to room temperature
+- 1/2 tsp. garlic powder
+- 1/4 cup grated parmesan cheese (plus extra for topping)
+- Salt and black pepper, to taste
 
 # Recipe
 
-## Prep:
-1. In a separate container, mix together the meat filling ingredients parsley, rosemary, thyme, salt, pepper
-2. In a separate container, mix together the Worchestershire sauce and garlic
-3. In a separate container, mix together the flour and tomato sauce. Stir until mixed
-4. In a separate container, mix together the potato topping garlic powder, salt, and pepper
+## 1. Prep & Station Setup:
+- **Preheat oven:** Set oven to 400°F (200°C) with rack in the center.
+- **Mix the broth:** In a measuring cup, stir together the hot tap water, Totole chicken bouillon, soy sauce, Chinkiang black vinegar, and pinch of sugar until dissolved.
+- **Dairy:** Pull butter and milk out of the fridge early so they warm to room temperature (cold dairy makes mashed potatoes gummy).
+- **Veggies & Aromatics:** Dice the onion, mince garlic, and measure out the pizza sauce, flour, and frozen peas/corn. Set a colander in the sink.
 
-## Meat Filling:
-1. In a large skillet, heat up the oil, the caramalize the onions, about 5 minutes.
-2. Add the ground pork. After breaking it up, add in parsley, rosemary, thyme, salt, pepper. Cook, stirring occasionally, for 6-8 minutes, until meat is browned.
-3. Add the Worchestershire sauce and garlic. Cook for 1 minute
-4. Add the flour and tomato sauce. Stir until well dispersed with no clumps.
-5. Add the broth and frozen vegetables. Bring to a boil, then reduce to simmer and simmer for 5 minuts.
-6. Set the meat mixture aside. Preheat over to 400 degree F.
+## 2. Parallel Cooking & Timing Workflow:
 
-## Potato Topping:
-1. Start a pot of water boiling.
-2. Peel and dice potatos. The finer the dice, the easier it will be to mash potatos later.
-3. After water boils, add potatos and reduce to a simmer. Cook until potatos are fork tender, 10-15 minutes.
-4. Drain the potatos, then let sit for 1 minute to evaporate remaining steam.
-5. Add butter, garlic powder, salt, and pepper. Mash and stir together.
-6. Add up to 1/2 milk to reach desired consistency.
-7. Add the parmesan cheese, still until well incoporated.
+### [Minute 0–5] Start the Potatoes
+1. Place potato cubes into a pot, cover with cold water by 1 inch, and add 1 tbsp. salt.
+2. Bring to a rolling boil over high heat.
+3. Once boiling, reduce slightly to medium-high and set a **15-minute timer**.
 
-Pour meat mixture into pan, then add potato on top.
-Cook for 25-30 minutes, then cool for 15 before serving.
+### [Minute 7–8 Remaining on Timer] Start the Meat Filling
+1. Place your Dutch oven on the stove over medium-high heat with 1 tbsp. cooking oil.
+2. Once shimmering, add ground beef. Sear undisturbed for 3–4 minutes to build a crust, then break into crumbles.
+3. Add the diced onion and cook 3–4 minutes until translucent. Stir in minced garlic for 30 seconds.
+4. Clear a spot in the center of the pot, add the pizza sauce (or tomato paste), and cook down for 1–2 minutes to concentrate flavor.
+5. Dust 2 tbsp. flour evenly over the beef. Stir continuously for 1 minute to cook out raw flour taste.
+6. Pour in the prepared Totole broth mixture. Scrape up any browned bits stuck to the bottom.
+7. Simmer for 2–3 minutes until the gravy is thick and glossy (a dragged spoon leaves a clean path on the bottom of the pot for 1–2 seconds).
+8. Turn off heat, stir in the frozen peas and corn, and flatten into an even layer.
 
-# Sources
-[Original Recipe](https://www.thewholesomedish.com/the-best-classic-shepherds-pie/)
+### [When Timer Rings] Mash the Potatoes
+*(This will line up right as the meat gravy finishes simmering)*
+1. Check potatoes with a fork; they should have zero resistance in the center.
+2. Drain thoroughly into the sink colander.
+3. Return potatoes to the hot, empty pot off heat for 1 minute so residual heat steams off excess moisture.
+4. Add the room-temperature butter, milk, garlic powder, salt, pepper, and parmesan. Mash until smooth and spreadable.
+
+## 3. Assembly & Bake:
+1. Spoon the hot mashed potatoes across the hot meat filling in the Dutch oven.
+2. Spread outward to the edges, creating a seal against the pot walls to keep gravy from boiling over.
+3. Rake the surface with fork tines in a crosshatch pattern to create texture peaks. Dust with extra parmesan.
+4. Bake uncovered at 400°F for 20 minutes until bubbling around the edges.
+5. Switch oven to High Broil for 2–4 minutes until the fork ridges turn golden and crisp.
+6. Let rest on the counter for 10–15 minutes so the gravy sets before serving.
