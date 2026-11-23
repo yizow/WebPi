@@ -91,6 +91,6 @@
 
 # Sources
 
-Emulating Kin Khao's hor muk dish, adapted.
+Emulating Kin Khao's hor muk dish.
 
 [Kin Khao](https://www.kinkhao.com)
