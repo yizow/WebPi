@@ -395,6 +395,7 @@ sudo certbot renew --dry-run
 * **Mixed content.** Once a page is served over HTTPS, any hardcoded `http://` URL in it gets blocked — images most visibly. Find and change them: `grep -rl "http://{your_domain}" www/ | xargs sed -i 's|http://{your_domain}|https://{your_domain}|g'`
 * **Local access shows a warning.** From inside your network, browse to the Pi by IP (`https://10.0.0.x`). The certificate is issued for the domain, not the IP, so the browser shows a name-mismatch warning. Expected; it doesn't happen over the public domain.
 * **Valid HTTPS on the LAN.** If you map the domain to the Pi's LAN IP in your machine's `/etc/hosts` (`10.0.0.x {your_domain} www.{your_domain}`), then `https://{your_domain}` works locally with a proper certificate: the name matches, and the request never leaves the network. This is the usual workaround when the router doesn't do NAT hairpin.
+* **Webhooks and the redirect.** GitHub does not follow redirects, so anything that POSTs to your site (like an auto-deploy webhook) has to stay proxied on port 80 rather than being 301'd to HTTPS. Keep that `location` block ahead of the redirect.
 
 
 # Setting up automatic deployment
