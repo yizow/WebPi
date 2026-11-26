@@ -1,4 +1,4 @@
-![](http://yizheliu.com/tofu_cucumber_salad.jpg =300x)
+![](https://yizheliu.com/tofu_cucumber_salad.jpg =300x)
 
 # Ingredients
 * 1 English cucumber

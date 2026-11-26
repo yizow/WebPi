@@ -1,5 +1,5 @@
-![](http://yizheliu.com/pork_loin_bean_curd_1.jpg =300x)
-![](http://yizheliu.com/pork_loin_bean_curd_2.jpg =300x)
+![](https://yizheliu.com/pork_loin_bean_curd_1.jpg =300x)
+![](https://yizheliu.com/pork_loin_bean_curd_2.jpg =300x)
 
 # Ingredients
 ## Stir Fry

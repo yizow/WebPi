@@ -1,5 +1,5 @@
-![](http://yizheliu.com/oxtail_stew_1.jpg =300x)
-![](http://yizheliu.com/oxtail_stew_2.jpg =300x)
+![](https://yizheliu.com/oxtail_stew_1.jpg =300x)
+![](https://yizheliu.com/oxtail_stew_2.jpg =300x)
 
 # Ingredients
 * Oxtail

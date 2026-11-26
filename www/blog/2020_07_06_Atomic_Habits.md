@@ -23,7 +23,7 @@ And similary, to _break_ a habit:
 ## Building a Guitar Habit
 A few weeks before starting this book, I had decided to get a bit more serious about learning guitar. I would spend at least 20 minutes every day playing guitar, and try and maintain this for 30 days, and see where I was at the end of this. To help myself stay on track, I created a calendar: empty to start with, but with a red X for every day I practice. I stuck it to the front of my fridge.
 
-![Guitar Calendar](http://yizheliu.com/guitar_calendar.jpg =300x)
+![Guitar Calendar](https://yizheliu.com/guitar_calendar.jpg =300x)
 
 Completely on accident, I had stumbled onto a lot of the ideas Clear breaks down in _Atomic Habits_
 

@@ -1,5 +1,5 @@
-![](http://yizheliu.com/omurice_1.jpg =300x)
-![](http://yizheliu.com/omurice_2.jpg =300x)
+![](https://yizheliu.com/omurice_1.jpg =300x)
+![](https://yizheliu.com/omurice_2.jpg =300x)
 
 # Ingredients
 ## Fried Rice (at least half a dozen omelettes)

@@ -1,6 +1,6 @@
-![](http://yizheliu.com/eggplant_pork_finished_1.jpg =300x)
-![](http://yizheliu.com/eggplant_pork_finished_2.jpg =300x)
-![](http://yizheliu.com/eggplant_pork_finished_3.jpg =300x)
+![](https://yizheliu.com/eggplant_pork_finished_1.jpg =300x)
+![](https://yizheliu.com/eggplant_pork_finished_2.jpg =300x)
+![](https://yizheliu.com/eggplant_pork_finished_3.jpg =300x)
 
 # Ingredients
 * 1 lb. Chinese eggplant (about 3)

@@ -1,4 +1,4 @@
-![](http://yizheliu.com/shepards_pie_finished.jpg =300x)
+![](https://yizheliu.com/shepards_pie_finished.jpg =300x)
 
 # Ingredients
 
