@@ -1,5 +1,5 @@
-![](http://yizheliu.com/crunchwrap_supreme_1.jpg =300x)
-![](http://yizheliu.com/crunchwrap_supreme_2.jpg =300x)
+![](https://yizheliu.com/crunchwrap_supreme_1.jpg =300x)
+![](https://yizheliu.com/crunchwrap_supreme_2.jpg =300x)
 
 # Ingredients - Makes 4 crunchwrap supremes
 

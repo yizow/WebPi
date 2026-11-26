@@ -8,14 +8,14 @@ One of the hobbies I've picked up during quarantine is cooking.
 
 And so, my decision to find a recipe off the internet, _and then repeat it 4 times in a row_, tweaking it each time till I'm satisfied, and recording my process and results here.
 
-This is actually the second recipe I'm trying; after finishing my [meatloaf experiements](http://yizheliu.com/recipes/meatloaf.md), a friend suggested than I chronicle the whole process as well as the result.
+This is actually the second recipe I'm trying; after finishing my [meatloaf experiements](https://yizheliu.com/recipes/meatloaf.md), a friend suggested than I chronicle the whole process as well as the result.
 
-Final results [here!](http://yizheliu.com/recipes/eggs_in_purgatory.md) Next time around I'll be sure to take more pictures. For now, here's a random smattering.
+Final results [here!](https://yizheliu.com/recipes/eggs_in_purgatory.md) Next time around I'll be sure to take more pictures. For now, here's a random smattering.
 
-![Prep work](http://yizheliu.com/eggs_in_purgatory_prep.jpg =300x)  
-![Plated](http://yizheliu.com/eggs_in_purgatory_plated.jpg =300x)  
-![Almost finished](http://yizheliu.com/eggs_in_purgatory_almost_finished.jpg =300x)  
-![Finished](http://yizheliu.com/eggs_in_purgatory_finished.jpg =300x)  
+![Prep work](https://yizheliu.com/eggs_in_purgatory_prep.jpg =300x)  
+![Plated](https://yizheliu.com/eggs_in_purgatory_plated.jpg =300x)  
+![Almost finished](https://yizheliu.com/eggs_in_purgatory_almost_finished.jpg =300x)  
+![Finished](https://yizheliu.com/eggs_in_purgatory_finished.jpg =300x)  
 
 
 # Iteration 0

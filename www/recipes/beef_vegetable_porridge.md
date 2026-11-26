@@ -1,6 +1,6 @@
-![](http://yizheliu.com/beef_vegetable_porridge_1.jpg =300x)
-![](http://yizheliu.com/beef_vegetable_porridge_2.jpg =300x)
-![](http://yizheliu.com/beef_vegetable_porridge_3.jpg =300x)
+![](https://yizheliu.com/beef_vegetable_porridge_1.jpg =300x)
+![](https://yizheliu.com/beef_vegetable_porridge_2.jpg =300x)
+![](https://yizheliu.com/beef_vegetable_porridge_3.jpg =300x)
 
 # Ingredients
 * 1/2 lb. ground beef

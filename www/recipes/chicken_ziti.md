@@ -1,4 +1,4 @@
-![](http://yizheliu.com/chicken_ziti_pre_bake.jpg =300x)
+![](https://yizheliu.com/chicken_ziti_pre_bake.jpg =300x)
 
 # Ingredients
 * 1 lb. pasta (1 bag)

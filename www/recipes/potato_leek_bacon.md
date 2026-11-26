@@ -1,6 +1,6 @@
-![](http://yizheliu.com/potato_leek_bacon_finished_1.jpg =300x)
-![](http://yizheliu.com/potato_leek_bacon_finished_2.jpg =300x)
-![](http://yizheliu.com/potato_leek_bacon_cooking.jpg =300x)
+![](https://yizheliu.com/potato_leek_bacon_finished_1.jpg =300x)
+![](https://yizheliu.com/potato_leek_bacon_finished_2.jpg =300x)
+![](https://yizheliu.com/potato_leek_bacon_cooking.jpg =300x)
 
 # Ingredients
 * 2 lb. leek. (Approximately one organic leek, which is inexplicably 4 times as big as the non-organic leek)

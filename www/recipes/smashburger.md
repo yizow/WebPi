@@ -1,7 +1,7 @@
-![](http://yizheliu.com/smashburger_1.jpg =300x)
-![](http://yizheliu.com/smashburger_2.jpg =300x)
-![](http://yizheliu.com/smashburger_3.jpg =300x)
-![](http://yizheliu.com/smashburger_4.jpg =300x)
+![](https://yizheliu.com/smashburger_1.jpg =300x)
+![](https://yizheliu.com/smashburger_2.jpg =300x)
+![](https://yizheliu.com/smashburger_3.jpg =300x)
+![](https://yizheliu.com/smashburger_4.jpg =300x)
 
 # Ingredients - Makes 2 burgers
 * 10 oz. ground beef, formed into 4 2.5 oz. half-patties
