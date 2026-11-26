@@ -616,6 +616,60 @@ child_process.exec('UPDATE_SCRIPT_FULL_PATH -a', (err, stdout, stderr) => {
 ```
 
 
+# Compressing Images
+
+Every photo on this site is resized before it is served. That isn't premature optimization: a phone camera produces something like 4608x3456 and 4-6 MB, and the recipes display images 300 pixels wide.
+
+```markdown
+![](https://yizheliu.com/naan_1.jpg =300x)
+```
+
+`=300x` comes from `markdown-it-imsize` (see `www/blog/blog.js`) and becomes `width="300"` in the HTML. So the browser pulls down a 16 megapixel file and throws away 99% of it. Resizing first makes pages faster to load, kinder to the Pi's upstream connection, and no worse to look at.
+
+## The tool
+
+`tools/compress_images.py` does the resize. It needs Pillow, which is not part of the Python standard library:
+
+```bash
+pip3 install Pillow
+```
+
+Usage:
+
+```bash
+python3 tools/compress_images.py OUTPUT_DIR IMAGE [IMAGE ...]
+```
+
+Each input is rotated according to its EXIF orientation (phones record "this is actually landscape" as metadata rather than rotating the pixels), scaled to fit within 1200 pixels on its longest side, and written to `OUTPUT_DIR` as a progressive JPEG at quality 80. All metadata — including the GPS coordinates your phone recorded — is dropped. The input files are never modified.
+
+```bash
+$ python3 tools/compress_images.py /tmp/compressed ~/Pictures/stew_3.jpg
+~/Pictures/stew_3.jpg
+  4608x3456 5713K -> 1200x900 165K  /tmp/compressed/stew_3.jpg
+```
+
+`--max-edge` and `--quality` override the defaults. 1200 pixels is four times the 300 pixels the pages display, which leaves headroom for high-DPI screens; there is no reason to go much higher while images are displayed this small.
+
+The 300-pixel width is also why this is a 1200-pixel derivative rather than a set of sizes: a `srcset` needs the template to offer several URLs, and `markdown-it` here is configured without raw HTML, so a single well-sized file is the honest trade for now.
+
+## Adding an image to a recipe
+
+1. Keep the originals somewhere outside the repo — `~/Pictures/...` is fine.
+2. Compress them into the site's image directory:
+
+   ```bash
+   python3 tools/compress_images.py www/resources ~/Pictures/naan_*.jpg
+   ```
+
+3. Reference them by their served path, which is the site root — nginx maps `*.jpg` to `www/resources`, so the file `www/resources/naan_1.jpg` is served at `/naan_1.jpg`:
+
+   ```markdown
+   ![](https://yizheliu.com/naan_1.jpg =300x)
+   ```
+
+4. Commit only the compressed copies.
+
+
 ## *Use debug instead of console.log*
 
 
