@@ -302,6 +302,101 @@ If your Rasbperry Pi is sitting behind a router like mine is, you'll need to set
 3. Forward the SSH port you chose above. This will allow you to remotely `ssh` in via `ssh -p your_port your_username@your_url.com`.
 
 
+# Enabling HTTPS
+
+Right now the site is served over plain HTTP. Browsers flag that as "Not secure", and any page served over HTTPS that pulls in an `http://` asset gets blocked as mixed content. Let's fix it with a free certificate from [Let's Encrypt](https://letsencrypt.org).
+
+We'll let `certbot` handle only the certificate and edit nginx by hand, rather than letting certbot rewrite the config itself. That keeps `~/WebPi/nginx/nginx.conf` under version control, so `update.sh`'s `git pull` never fights with machine-edited config.
+
+1. Forward port `443` on your router to the Pi, the same way you forwarded `80`. Leave `80` forwarded too: Let's Encrypt proves you own the domain by fetching a file over `80`, and it re-checks every 90 days when the certificate renews.
+
+2. Install certbot.
+
+    ```bash
+    sudo apt update
+    sudo apt install -y certbot
+    ```
+
+3. Request the certificate. `--webroot` tells certbot to drop a token file in our web root and serve it over the port 80 that already works — no downtime, and nginx doesn't need to be reconfigured first.
+
+    ```bash
+    sudo certbot certonly --webroot -w /home/$USER/WebPi/www \
+      -d {your_domain} -d www.{your_domain}
+    ```
+
+    * Replace `{your_domain}` with your domain and `$USER` with your username.
+    * On first run it asks for an email (expiry warnings) and asks you to accept the terms.
+    * The certificate lands in `/etc/letsencrypt/live/{your_domain}/`.
+
+4. Update `~/WebPi/nginx/nginx.conf`. Give the existing block a `server_name`, keep an exception so renewals can still be validated, redirect everything else to HTTPS, and add a second server block that terminates TLS:
+
+    ```nginx
+    events{
+    }
+
+    http{
+      server{
+        listen 80;
+        server_name {your_domain} www.{your_domain};
+
+        # Let's Encrypt fetches this path when it renews the cert.
+        location /.well-known/acme-challenge/ {
+          root /home/$USER/WebPi/www;
+        }
+
+        # Everything else goes to HTTPS.
+        location / {
+          return 301 https://$host$request_uri;
+        }
+      }
+
+      server{
+        listen 443 ssl http2;
+        server_name {your_domain} www.{your_domain};
+
+        ssl_certificate     /etc/letsencrypt/live/{your_domain}/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/{your_domain}/privkey.pem;
+        ssl_protocols       TLSv1.2 TLSv1.3;
+
+        autoindex on;
+
+        location / {
+          root /home/$USER/WebPi/www;
+        }
+
+        # ...all of your other location blocks (node, blog, github_deploy,
+        # recipes, jpg/css) copied here unchanged...
+      }
+    }
+    ```
+
+    * Replace `{your_domain}` and `$USER` as above.
+    * The certificate must exist **before** this config is deployed. If nginx can't find the files named by `ssl_certificate`, it refuses to start — so issue the cert first, then deploy the config.
+
+5. Test the config before reloading. If `nginx -t` complains, fix the file — nginx keeps serving the old config until the test passes.
+
+    ```bash
+    sudo nginx -t
+    sudo systemctl reload nginx
+    ```
+
+6. From _outside_ your home network (no hairpin, remember), open `https://{your_domain}`. You should see the padlock, and `http://` should redirect there automatically.
+
+## Renewing
+
+`apt` installs a systemd timer that runs `certbot renew` twice a day; certificates renew themselves with about 30 days left, as long as port `80` stays forwarded. Verify the renewal path works with:
+
+```bash
+sudo certbot renew --dry-run
+```
+
+## Gotchas
+
+* **Mixed content.** Once a page is served over HTTPS, any hardcoded `http://` URL in it gets blocked — images most visibly. Find and change them: `grep -rl "http://{your_domain}" www/ | xargs sed -i 's|http://{your_domain}|https://{your_domain}|g'`
+* **Local access shows a warning.** From inside your network, browse to the Pi by IP (`https://10.0.0.x`). The certificate is issued for the domain, not the IP, so the browser shows a name-mismatch warning. Expected; it doesn't happen over the public domain.
+* **Valid HTTPS on the LAN.** If you map the domain to the Pi's LAN IP in your machine's `/etc/hosts` (`10.0.0.x {your_domain} www.{your_domain}`), then `https://{your_domain}` works locally with a proper certificate: the name matches, and the request never leaves the network. This is the usual workaround when the router doesn't do NAT hairpin.
+
+
 # Setting up automatic deployment
 
 Instead of having to manually type a series of commands every time we want to deploy an update, we can Create a script that will do everything with a single command. Currently deployment is:
